@@ -14,7 +14,10 @@
       "Bash(npx docusaurus start --port 4000)",
       "Bash(dir docs /s)",
       "Bash(dir docs /s /b)",
-      "Bash(cmd /c \"dir docs /s\")"
+      "Bash(cmd /c \"dir docs /s\")",
+      "Bash(ssh-add ~/.ssh/id_rsa)",
+      "Bash(ssh-add)",
+      "Bash(ssh-keygen -t rsa -b 4096 -C \"mohammad.ainamdar@gmail.com\")"
     ],
     "deny": [],
     "ask": []
