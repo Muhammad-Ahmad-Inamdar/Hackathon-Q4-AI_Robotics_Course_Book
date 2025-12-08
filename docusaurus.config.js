@@ -14,12 +14,12 @@ const config = {
   url: 'https://Muhammad-Ahmad-Inamdar.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/Hackathon-Physical-AI-Humanoid-Robotics-Textbook-/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Muhammad-Ahmad-Inamdar', // Usually your GitHub org/user name.
-  projectName: 'AI-Book_01', // Usually your repo name.
+  projectName: 'Hackathon-Q4-AI_Robotics_Course_Book', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
