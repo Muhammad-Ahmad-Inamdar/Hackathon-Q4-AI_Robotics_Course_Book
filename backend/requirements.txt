@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+openai
+pydantic
+python-dotenv
+sqlalchemy
+qdrant-client
+numpy
+tiktoken
+pyjwt
+passlib[bcrypt]
+python-multipart
+python-socketio
+redis

@@ -1,0 +1,8 @@
+{
+  "label": "Module 4: Vision-Language-Action (VLA) Systems",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Advanced multimodal AI systems that enable natural human-robot interaction through vision, language, and action integration, including OpenAI Whisper integration and LLM cognitive planning for sophisticated robotic behaviors."
+  }
+}
