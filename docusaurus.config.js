@@ -67,7 +67,7 @@ const config = {
             label: 'Textbook',
           },
           {
-            href: 'https://github.com/Muhammad-Ahmad-Inamdar/AI-Book_01',
+            href: 'https://github.com/Muhammad-Ahmad-Inamdar/Hackathon-Q4-AI_Robotics_Course_Book',
             label: 'GitHub',
             position: 'right',
           },
@@ -119,7 +119,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/Muhammad-Ahmad-Inamdar/AI-Book_01',
+                href: 'https://github.com/Muhammad-Ahmad-Inamdar/Hackathon-Q4-AI_Robotics_Course_Book',
               },
             ],
           },
