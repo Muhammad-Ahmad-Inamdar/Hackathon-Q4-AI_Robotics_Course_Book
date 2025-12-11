@@ -20,7 +20,9 @@
       "Bash(ssh-keygen -t rsa -b 4096 -C \"mohammad.ainamdar@gmail.com\")",
       "Bash(git add docusaurus.config.js)",
       "Bash(git commit -m \"Fix docusaurus configuration for build\")",
-      "Bash(ssh -T git@github.com)"
+      "Bash(ssh -T git@github.com)",
+      "Bash(rm -rf backend)",
+      "Bash(rm -r chatbot)"
     ],
     "deny": [],
     "ask": []

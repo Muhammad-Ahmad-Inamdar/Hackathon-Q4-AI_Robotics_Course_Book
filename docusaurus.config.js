@@ -1,32 +1,24 @@
 // @ts-check
-// `@type` JSDoc annotations allow IDEs and type-checking tools to autocomplete
-// and validate types.
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Physical AI & Humanoid Robotics Textbook',
-  tagline: 'An AI-native textbook on Physical AI & Humanoid Robotics with ROS 2, Gazebo, Unity, NVIDIA Isaac, and VLA integration',
+  tagline:
+    'An AI-native textbook on Physical AI & Humanoid Robotics with ROS 2, Gazebo, Unity, NVIDIA Isaac, and VLA integration',
   favicon: '/img/1.png',
 
-  // Set the production url of your site here
   url: 'https://Muhammad-Ahmad-Inamdar.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+
   baseUrl: '/Hackathon-Q4-AI_Robotics_Course_Book/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Muhammad-Ahmad-Inamdar', // Usually your GitHub org/user name.
-  projectName: 'Hackathon-Q4-AI_Robotics_Course_Book', // Usually your repo name.
+  organizationName: 'Muhammad-Ahmad-Inamdar',
+  projectName: 'Hackathon-Q4-AI_Robotics_Course_Book',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -35,12 +27,9 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -52,85 +41,62 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      // Replace with your project's social card
-      
-      navbar: {
-        title: 'Physical AI & Humanoid Robotics',
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Textbook',
-          },
-          {
-            href: 'https://github.com/Muhammad-Ahmad-Inamdar/Hackathon-Q4-AI_Robotics_Course_Book',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Modules',
-            items: [
-              {
-                label: 'Module 1: ROS 2',
-                to: '/docs/module-1-ros2/intro',
-              },
-              {
-                label: 'Module 2: Digital Twin',
-                to: '/docs/module-2-digital-twin/intro',
-              },
-              {
-                label: 'Module 3: AI-Robot Brain',
-                to: '/docs/module-3-ai-brain/intro',
-              },
-              {
-                label: 'Module 4: VLA',
-                to: '/docs/module-4-vla/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Muhammad-Ahmad-Inamdar/Hackathon-Q4-AI_Robotics_Course_Book',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-    }),
+  themeConfig: {
+    navbar: {
+      title: 'Physical AI & Humanoid Robotics',
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Textbook',
+        },
+        {
+          href: 'https://github.com/Muhammad-Ahmad-Inamdar/Hackathon-Q4-AI_Robotics_Course_Book',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
+    },
+
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Modules',
+          items: [
+            { label: 'Module 1: ROS 2', to: '/docs/module-1-ros2/intro' },
+            { label: 'Module 2: Digital Twin', to: '/docs/module-2-digital-twin/intro' },
+            { label: 'Module 3: AI-Robot Brain', to: '/docs/module-3-ai-brain/intro' },
+            { label: 'Module 4: VLA', to: '/docs/module-4-vla/intro' },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            { label: 'Stack Overflow', href: 'https://stackoverflow.com/tagged/docusaurus' },
+            { label: 'Discord', href: 'https://discordapp.com/invite/docusaurus' },
+            { label: 'Twitter', href: 'https://twitter.com/docusaurus' },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/Muhammad-Ahmad-Inamdar/Hackathon-Q4-AI_Robotics_Course_Book',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
+    },
+
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  },
 };
 
 export default config;
