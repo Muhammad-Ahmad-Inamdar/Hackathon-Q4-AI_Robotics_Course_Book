@@ -11,7 +11,7 @@ const config = {
 
   url: 'https://Muhammad-Ahmad-Inamdar.github.io',
 
-  baseUrl: '/',
+  baseUrl: '/Hackathon-Q4-AI_Robotics_Course_Book/',
 
   organizationName: 'Muhammad-Ahmad-Inamdar',
   projectName: 'Hackathon-Q4-AI_Robotics_Course_Book',
