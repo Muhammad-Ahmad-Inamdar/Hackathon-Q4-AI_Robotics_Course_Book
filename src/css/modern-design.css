@@ -1,0 +1,474 @@
+:root {
+  /* Light theme colors */
+  --ifm-color-primary: #4f46e5;
+  --ifm-color-primary-dark: #4338ca;
+  --ifm-color-primary-darker: #3730a3;
+  --ifm-color-primary-darkest: #312e81;
+  --ifm-color-primary-light: #6366f1;
+  --ifm-color-primary-lighter: #818cf8;
+  --ifm-color-primary-lightest: #c7d2fe;
+
+  /* Dark theme colors */
+  --ifm-color-primary-100: #4f46e5;
+  --ifm-color-primary-200: #4338ca;
+  --ifm-color-primary-300: #3730a3;
+  --ifm-color-primary-400: #312e81;
+  --ifm-color-primary-500: #6366f1;
+  --ifm-color-primary-600: #818cf8;
+  --ifm-color-primary-700: #c7d2fe;
+
+  /* Modern color palette */
+  --modern-primary: #4f46e5;
+  --modern-primary-hover: #4338ca;
+  --modern-secondary: #64748b;
+  --modern-accent: #06b6d4;
+  --modern-success: #10b981;
+  --modern-warning: #f59e0b;
+  --modern-danger: #ef4444;
+
+  /* Background colors */
+  --modern-bg-primary: #ffffff;
+  --modern-bg-secondary: #f8fafc;
+  --modern-bg-tertiary: #f1f5f9;
+  --modern-bg-card: #ffffff;
+  --modern-bg-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Dark theme background colors */
+  --modern-bg-primary-dark: #0f172a;
+  --modern-bg-secondary-dark: #1e293b;
+  --modern-bg-tertiary-dark: #334155;
+  --modern-bg-card-dark: #1e293b;
+
+  /* Text colors */
+  --modern-text-primary: #1e293b;
+  --modern-text-secondary: #64748b;
+  --modern-text-tertiary: #94a3b8;
+  --modern-text-inverted: #ffffff;
+
+  /* Dark theme text colors */
+  --modern-text-primary-dark: #f1f5f9;
+  --modern-text-secondary-dark: #cbd5e1;
+  --modern-text-tertiary-dark: #94a3b8;
+
+  /* Borders */
+  --modern-border: #e2e8f0;
+  --modern-border-dark: #334155;
+
+  /* Shadows */
+  --modern-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --modern-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --modern-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --modern-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --modern-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --modern-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Rounded corners */
+  --modern-rounded-sm: 0.125rem;
+  --modern-rounded: 0.25rem;
+  --modern-rounded-md: 0.375rem;
+  --modern-rounded-lg: 0.5rem;
+  --modern-rounded-xl: 0.75rem;
+  --modern-rounded-2xl: 1rem;
+  --modern-rounded-full: 9999px;
+
+  /* Spacing */
+  --modern-spacing-xs: 0.25rem;
+  --modern-spacing-sm: 0.5rem;
+  --modern-spacing-md: 1rem;
+  --modern-spacing-lg: 1.5rem;
+  --modern-spacing-xl: 2rem;
+  --modern-spacing-2xl: 3rem;
+
+  /* Typography */
+  --modern-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --modern-font-size-sm: 0.875rem;
+  --modern-font-size-base: 1rem;
+  --modern-font-size-lg: 1.125rem;
+  --modern-font-size-xl: 1.25rem;
+  --modern-font-size-2xl: 1.5rem;
+  --modern-font-size-3xl: 1.875rem;
+  --modern-font-size-4xl: 2.25rem;
+  --modern-font-size-5xl: 3rem;
+
+  /* Transitions */
+  --modern-transition: all 0.2s ease-in-out;
+  --modern-transition-long: all 0.3s ease-in-out;
+}
+
+/* Dark theme */
+[data-theme='dark'] {
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+
+  --modern-bg-primary: var(--modern-bg-primary-dark);
+  --modern-bg-secondary: var(--modern-bg-secondary-dark);
+  --modern-bg-tertiary: var(--modern-bg-tertiary-dark);
+  --modern-bg-card: var(--modern-bg-card-dark);
+
+  --modern-text-primary: var(--modern-text-primary-dark);
+  --modern-text-secondary: var(--modern-text-secondary-dark);
+  --modern-text-tertiary: var(--modern-text-tertiary-dark);
+
+  --modern-border: var(--modern-border-dark);
+}
+
+/* Modern typography */
+html {
+  font-family: var(--modern-font-family);
+  line-height: 1.6;
+}
+
+/* Smooth transitions - removed for theme switching performance */
+/* * {
+  transition: var(--modern-transition);
+} */
+
+/* Only apply transitions to interactive elements */
+a, button, input, textarea, select {
+  transition: var(--modern-transition);
+}
+
+/* Keep transitions for animations and specific components */
+.chatbot-floating-btn,
+.chatbot-window,
+.chatbot-message,
+.chatbot-send-btn,
+.chatbot-close-btn {
+  transition: var(--modern-transition);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--modern-bg-tertiary);
+  border-radius: var(--modern-rounded-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--modern-secondary);
+  border-radius: var(--modern-rounded-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--modern-primary);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--modern-primary);
+  outline-offset: 2px;
+  border-radius: var(--modern-rounded);
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  transition: var(--modern-transition);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button styles */
+.button {
+  border-radius: var(--modern-rounded-lg);
+  padding: var(--modern-spacing-sm) var(--modern-spacing-md);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: var(--modern-transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--modern-spacing-xs);
+}
+
+.button--primary {
+  background-color: var(--modern-primary);
+  color: var(--modern-text-inverted);
+}
+
+.button--primary:hover {
+  background-color: var(--modern-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--modern-shadow-md);
+}
+
+.button--secondary {
+  background-color: var(--modern-bg-secondary);
+  color: var(--modern-text-primary);
+}
+
+.button--secondary:hover {
+  background-color: var(--modern-bg-tertiary);
+  transform: translateY(-1px);
+}
+
+/* Specific button for "Start Reading Textbook" - always white with black text */
+.button--textbook {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid var(--modern-border) !important;
+}
+
+[data-theme='dark'] .button--textbook {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid var(--modern-border) !important;
+}
+
+.button--textbook:hover {
+  background-color: #f8fafc !important;
+  transform: translateY(-1px);
+  box-shadow: var(--modern-shadow-md);
+}
+
+/* Ensure all buttons with this class are always white with black text */
+.navbar__link.button--textbook,
+.button--textbook,
+a.button--textbook,
+.menu__link.button--textbook {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid var(--modern-border) !important;
+}
+
+[data-theme='dark'] .navbar__link.button--textbook,
+[data-theme='dark'] .button--textbook,
+[data-theme='dark'] a.button--textbook,
+[data-theme='dark'] .menu__link.button--textbook {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid var(--modern-border) !important;
+}
+
+/* More specific selector for homepage header button */
+.header__hero .button--primary,
+.header__hero a.button,
+.header__hero .hero__title + div a,
+.header__hero .button {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+[data-theme='dark'] .header__hero .button--primary,
+[data-theme='dark'] .header__hero a.button,
+[data-theme='dark'] .header__hero .hero__title + div a,
+[data-theme='dark'] .header__hero .button {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+/* Card styles */
+.card {
+  background: var(--modern-bg-card);
+  border-radius: var(--modern-rounded-xl);
+  box-shadow: var(--modern-shadow-lg);
+  border: 1px solid var(--modern-border);
+  transition: var(--modern-transition);
+}
+
+.card:hover {
+  box-shadow: var(--modern-shadow-xl);
+  transform: translateY(-2px);
+}
+
+/* Input styles */
+.input {
+  border: 1px solid var(--modern-border);
+  border-radius: var(--modern-rounded-lg);
+  padding: var(--modern-spacing-sm) var(--modern-spacing-md);
+  font-size: var(--modern-font-size-base);
+  background: var(--modern-bg-primary);
+  color: var(--modern-text-primary);
+  transition: var(--modern-transition);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--modern-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--modern-bg-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--modern-transition-long);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--modern-bg-card);
+  border-radius: var(--modern-rounded-xl);
+  box-shadow: var(--modern-shadow-2xl);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: var(--modern-transition-long);
+}
+
+.modal-overlay.open .modal {
+  transform: scale(1);
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-1 { margin-bottom: var(--modern-spacing-xs); }
+.mb-2 { margin-bottom: var(--modern-spacing-sm); }
+.mb-3 { margin-bottom: var(--modern-spacing-md); }
+.mb-4 { margin-bottom: var(--modern-spacing-lg); }
+.mb-5 { margin-bottom: var(--modern-spacing-xl); }
+
+.mt-1 { margin-top: var(--modern-spacing-xs); }
+.mt-2 { margin-top: var(--modern-spacing-sm); }
+.mt-3 { margin-top: var(--modern-spacing-md); }
+.mt-4 { margin-top: var(--modern-spacing-lg); }
+.mt-5 { margin-top: var(--modern-spacing-xl); }
+
+.p-1 { padding: var(--modern-spacing-xs); }
+.p-2 { padding: var(--modern-spacing-sm); }
+.p-3 { padding: var(--modern-spacing-md); }
+.p-4 { padding: var(--modern-spacing-lg); }
+.p-5 { padding: var(--modern-spacing-xl); }
+
+.rounded { border-radius: var(--modern-rounded); }
+.rounded-lg { border-radius: var(--modern-rounded-lg); }
+.rounded-xl { border-radius: var(--modern-rounded-xl); }
+.rounded-full { border-radius: var(--modern-rounded-full); }
+
+.shadow { box-shadow: var(--modern-shadow); }
+.shadow-md { box-shadow: var(--modern-shadow-md); }
+.shadow-lg { box-shadow: var(--modern-shadow-lg); }
+.shadow-xl { box-shadow: var(--modern-shadow-xl); }
+
+.bg-primary { background-color: var(--modern-primary); }
+.bg-secondary { background-color: var(--modern-secondary); }
+.bg-tertiary { background-color: var(--modern-bg-tertiary); }
+.bg-white { background-color: var(--modern-bg-primary); }
+.bg-gray { background-color: var(--modern-bg-secondary); }
+
+.text-primary { color: var(--modern-primary); }
+.text-secondary { color: var(--modern-text-secondary); }
+.text-white { color: var(--modern-text-inverted); }
+.text-gray { color: var(--modern-text-primary); }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.max-w-full { max-width: 100%; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  :root {
+    --modern-spacing-lg: 1rem;
+    --modern-spacing-xl: 1.5rem;
+  }
+
+  .modal {
+    margin: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --modern-shadow: 0 0 0 2px currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .modal-overlay,
+  .chatbot-floating-btn {
+    display: none !important;
+  }
+
+  /* Start Reading Button: Always White Background & Black Text */
+.button.button--textbook-fixed {
+  background-color: #FFFFFF !important; /* Hamesha white */
+  color: #000000 !important;            /* Hamesha black text */
+  border: 2px solid #FFFFFF !important;
+  font-weight: 700 !important;          /* Text thora bold taake saaf dikhe */
+  opacity: 1 !important;                /* Transparency khatam karne ke liye */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Halka sa shadow depth ke liye */
+}
+
+/* Hover effect taake user ko pata chale click ho raha hai */
+.button.button--textbook-fixed:hover {
+  background-color: #f8fafc !important; /* Halka sa off-white hover par */
+  color: #000000 !important;
+  transform: translateY(-2px);          /* Chota sa lift effect */
+  text-decoration: none !important;     /* Underline na aaye */
+}
+
+/* Dark mode mein bhi zabardasti yahi color rakhne ke liye */
+[data-theme='dark'] .button.button--textbook-fixed {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+}

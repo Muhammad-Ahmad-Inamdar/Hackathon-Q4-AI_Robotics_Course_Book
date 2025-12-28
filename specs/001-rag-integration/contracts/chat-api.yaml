@@ -1,0 +1,172 @@
+openapi: 3.0.0
+info:
+  title: RAG Chatbot API
+  description: API for the RAG system integration with textbook Q&A functionality
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+
+paths:
+  /chat:
+    post:
+      summary: Process user query and return AI response
+      description: Takes a user query about the textbook and returns an AI-generated response with source references
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  description: The user's question about the textbook
+                  example: "How many chapters are in this book?"
+                userId:
+                  type: string
+                  description: Optional user identifier for tracking
+                  example: "user-123"
+      responses:
+        '200':
+          description: Successful response with AI answer
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response
+                  - sources
+                  - confidence
+                properties:
+                  response:
+                    type: string
+                    description: The AI-generated answer to the query
+                    example: "The textbook contains 8 chapters covering topics from Introduction to Physical AI to Advanced Humanoid Robotics."
+                  sources:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: Unique identifier of the source fragment
+                        title:
+                          type: string
+                          description: Title of the source section
+                        content:
+                          type: string
+                          description: Excerpt from the source
+                        page:
+                          type: number
+                          description: Page number in the original textbook
+                    description: List of textbook fragments used to generate the response
+                  confidence:
+                    type: number
+                    description: Confidence score of the response (0-100)
+                    example: 95
+        '400':
+          description: Bad request - invalid query format
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Query cannot be empty"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Failed to process query"
+
+  /ingest:
+    post:
+      summary: Ingest textbook content into vector database
+      description: Processes textbook files and stores them in the vector database for retrieval
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - textbook_path
+              properties:
+                textbook_path:
+                  type: string
+                  description: Path to the textbook files to be ingested
+                  example: "/path/to/textbook/files"
+      responses:
+        '200':
+          description: Successfully ingested textbook content
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - status
+                  - chunks_processed
+                properties:
+                  status:
+                    type: string
+                    description: Status of the ingestion process
+                    example: "success"
+                  chunks_processed:
+                    type: number
+                    description: Number of content chunks processed
+                    example: 120
+        '400':
+          description: Bad request - invalid path or format
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Invalid textbook path provided"
+        '500':
+          description: Internal server error during ingestion
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Failed to process textbook files"
+
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the API
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Health status
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    description: Timestamp of the health check
+                    example: "2025-12-26T10:00:00Z"

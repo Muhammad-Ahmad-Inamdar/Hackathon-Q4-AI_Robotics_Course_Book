@@ -1,0 +1,47 @@
+{
+  "welcome_message": "Hello! I'm your AI assistant for the AI Book. Ask me anything about the content in the book and I'll help you find the information you need.",
+  "sample_responses": [
+    {
+      "query": "What is artificial intelligence?",
+      "response": "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions. The term may also be applied to any machine that exhibits traits associated with a human mind such as learning and problem-solving.",
+      "confidence": 0.95,
+      "sources": ["Chapter 1: Introduction to AI", "Section 1.2: Defining Artificial Intelligence"]
+    },
+    {
+      "query": "Explain machine learning",
+      "response": "Machine Learning is a subset of artificial intelligence that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. It focuses on the development of computer programs that can access data and use it to learn for themselves.",
+      "confidence": 0.92,
+      "sources": ["Chapter 3: Machine Learning Fundamentals", "Section 3.1: What is Machine Learning"]
+    },
+    {
+      "query": "What are neural networks?",
+      "response": "Neural networks are a series of algorithms that endeavors to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates. They are composed of interconnected nodes or neurons that process information using dynamic state responses to external inputs.",
+      "confidence": 0.89,
+      "sources": ["Chapter 4: Neural Networks", "Section 4.1: Introduction to Neural Networks"]
+    },
+    {
+      "query": "How does deep learning work?",
+      "response": "Deep learning is a subset of machine learning where artificial neural networks, algorithms inspired by the human brain, learn from large amounts of data. Deep learning is called 'deep' because the neural networks have various hidden layers that data travels through as it's processed.",
+      "confidence": 0.91,
+      "sources": ["Chapter 5: Deep Learning", "Section 5.2: Understanding Deep Learning"]
+    },
+    {
+      "query": "What is natural language processing?",
+      "response": "Natural Language Processing (NLP) is a branch of artificial intelligence that helps computers understand, interpret and manipulate human language. NLP combines computational linguistics with statistical, machine learning, and deep learning models.",
+      "confidence": 0.88,
+      "sources": ["Chapter 7: NLP Applications", "Section 7.1: Foundations of NLP"]
+    }
+  ],
+  "error_responses": {
+    "unknown_topic": "I couldn't find specific information about that topic in the book. Please try rephrasing your question or ask about another topic covered in the AI Book.",
+    "technical_difficulty": "I'm experiencing some technical difficulties retrieving information. Please try your question again in a moment.",
+    "out_of_scope": "That question seems to be outside the scope of the AI Book content. I can only provide information based on the material in the published book."
+  },
+  "follow_up_suggestions": [
+    "Tell me more about neural networks",
+    "Explain reinforcement learning",
+    "What are the ethical considerations in AI?",
+    "How is AI used in healthcare?",
+    "What is the future of artificial intelligence?"
+  ]
+}

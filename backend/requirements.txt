@@ -1,0 +1,7 @@
+qdrant-client==1.9.1
+sentence-transformers
+python-dotenv
+torch
+fastapi
+uvicorn
+google-generativeai

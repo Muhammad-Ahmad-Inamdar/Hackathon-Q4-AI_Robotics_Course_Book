@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"& ''.specify/scripts/powershell/check-prerequisites.ps1'' -Json -RequireTasks -IncludeTasks\")",
+      "Bash(mkdir -p backend/src/rag_agent)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(npx docusaurus info)",
+      "Bash(npx kill-port 8000)",
+      "Bash(npx kill-port 8002)",
+      "Skill(sp.constitution)"
+    ]
+  }
+}

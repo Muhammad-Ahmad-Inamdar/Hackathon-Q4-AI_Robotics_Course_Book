@@ -1,0 +1,99 @@
+# Chatbot API Contract
+
+## Overview
+
+This contract defines the API interface for the chatbot functionality. This contract must be preserved even when the backend RAG services are removed, requiring mock implementations to maintain UI compatibility.
+
+## Base URL
+
+All API endpoints are relative to the application's base URL.
+
+## Endpoints
+
+### Send Message
+
+**Endpoint**: `POST /api/chat/send`
+
+**Description**: Sends a message to the chatbot and receives a response.
+
+**Request**:
+```json
+{
+  "message": "string (the user's message)",
+  "sessionId": "string (optional session identifier)",
+  "context": "object (optional context data)"
+}
+```
+
+**Response**:
+```json
+{
+  "success": "boolean (indicates if the request was successful)",
+  "data": {
+    "response": "string (the chatbot's response)",
+    "timestamp": "string (ISO date string)",
+    "messageId": "string (unique identifier for the message)"
+  },
+  "error": "string (present only if success is false)"
+}
+```
+
+**Success Response Example**:
+```json
+{
+  "success": true,
+  "data": {
+    "response": "Hello! How can I help you today?",
+    "timestamp": "2025-12-26T10:30:00.000Z",
+    "messageId": "msg-12345"
+  }
+}
+```
+
+**Error Response Example**:
+```json
+{
+  "success": false,
+  "error": "Backend service temporarily unavailable"
+}
+```
+
+### Get Chat History
+
+**Endpoint**: `GET /api/chat/history`
+
+**Description**: Retrieves the chat history for a given session.
+
+**Request Parameters**:
+- `sessionId` (string, optional): The session identifier
+
+**Response**:
+```json
+{
+  "success": "boolean (indicates if the request was successful)",
+  "data": {
+    "messages": [
+      {
+        "id": "string (message identifier)",
+        "content": "string (message content)",
+        "sender": "string (either 'user' or 'bot')",
+        "timestamp": "string (ISO date string)"
+      }
+    ]
+  },
+  "error": "string (present only if success is false)"
+}
+```
+
+## Error Handling
+
+All API endpoints should return consistent error responses with:
+- HTTP status code in the 4xx or 5xx range
+- JSON response body with `success: false` and an `error` field
+
+## Status Codes
+
+- `200`: Success
+- `400`: Bad request (invalid input)
+- `500`: Internal server error
+- `503`: Service unavailable (for when backend is removed)
